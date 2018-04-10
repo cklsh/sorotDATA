@@ -34,7 +34,7 @@ class Datatable extends React.Component<ITable, {}> {
                             {this.props.field.map((data:string, idx:number) => (<td key={idx}><input className="form-control" defaultValue=""/></td>))}
                             <td colSpan={2}><button className="btn btn-info addBtn ">insert data</button></td>
                         </tr>
-                        <THead column={this.props.field} sort={this.props.sortData} search={this.props.searchData}/>
+                        <THead column={this.props.field} sort={this.props.sortData} search={this.props.searchData} content={this.props.content}/>
                         <TBody content={this.props.content} delete={this.props.deleteData}/>
                     </table>
                 </div>

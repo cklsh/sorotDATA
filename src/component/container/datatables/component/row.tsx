@@ -5,7 +5,7 @@ var _ = require('lodash/core')
 interface IRow {
     idx: number
     content: any
-    delete: (idx: Number) => void
+    delete: (idx: Number, content: any) => void
 }
 
 interface IField {
@@ -28,7 +28,7 @@ class Row extends React.Component<IRow, {}> {
 
     handleDelete(e:any){
         let idx: Number = e.target.value;
-        this.props.delete(idx);
+        this.props.delete(idx, this.props.content);
     }
 
     render () {

@@ -1,8 +1,6 @@
 import * as React from 'react'
 import Fa500px = require('react-icons/lib/fa/500px')
 import GoThreeBars = require('react-icons/lib/go/three-bars')
-import MdNotificationsNone = require('react-icons/lib/md/notifications-none')
-import MdSettings = require('react-icons/lib/md/settings')
 
 class Header extends React.Component<any, any> {
 
@@ -38,15 +36,10 @@ class Header extends React.Component<any, any> {
         return (
             <div>
                 <div className="row header">
-                    <div className="col-4 col-md-2 header-logo">
+                    <div className="col-8 col-md-4 header-logo">
                       LOGO<GoThreeBars className="icon" onClick={this.navbarDisplay()}/>
                     </div>
-                    <div className="col-4 col-md-8"/>
-                    <div className="col-4 col-md-2 settings">
-                        <MdSettings className="icon"/>
-                        <span className="notif-count badge badge-danger">2</span>
-                        <MdNotificationsNone className="icon" onClick={this.showNotif()}/>
-                    </div>
+                    <div className="col-4 col-md-6"/>
                 </div>
                 {this.state.notif && <div className="notif-content">notification content</div>}
             </div>

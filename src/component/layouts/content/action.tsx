@@ -18,11 +18,10 @@ interface IAction extends React.Props<Action>{
 class Action extends React.Component<IAction, any> {
 
     public render() {
-        console.log("hti", this.props)
         return(
             <div>
                 <Sidebar/>
-                {this.props.table && this.props.data && <div><TableContainer {...this.props.data}/></div>}
+                {this.props.table && this.props.data && <div className="wrapper"><TableContainer {...this.props.data}/></div>}
                 {this.props.form && this.props.data  &&<div><FormContainer {...this.props.data}/></div>}
             </div>
         )

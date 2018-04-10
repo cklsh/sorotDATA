@@ -1,8 +1,13 @@
 .sortBtn {
   background-color: rgba(255, 255, 255, 0);
-  background: rgba(255, 255, 255, 0); }
+  background: rgba(255, 255, 255, 0);
+  white-space: nowrap !important;
+  text-align: center !important;
+  display: inline !important; }
   .sortBtn .icon {
-    margin-left: 20px; }
+    float: right !important; }
 
 .addBtn {
-  width: 100%; }
+  width: 100%;
+  white-space: nowrap;
+  text-align: center; }

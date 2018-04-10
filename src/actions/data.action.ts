@@ -2,50 +2,18 @@ import axios from 'axios'
 
 import DataEntity from '../api/dataEntity';
 import api from '../helpers/api'
-import {sorotData} from '../helpers/sorot'
+import {content} from '../helpers/sorot'
+import {getFieldName} from '../helpers/function'
 
-console.log(sorotData)
 var _ = require('lodash')
 const BASE_URL = "http://localhost:9090/"
 
-var field:any =  [
-    "Channel",
-    "Deskripsi Laporan",
-    "Foto Komentar",
-    "Foto Laporan",
-    "Foto User",
-    "ID Laporan",
-    "Judul",
-    "Kategori",
-    "Komentar",
-    "Lama Penyelesaian",
-    "Latitude",
-    "Longitude",
-    "Media",
-    "Nama User",
-    "Status",
-    "Tanggal",
-    "Video Laporan"
-];
-
-//buat test
-var field2:any =  ["Firstname", "Lastname", "Email"];
-
-var content:any = [
-    {"Firstname": "John", "Lastname": "Doe", "Email": "john@example.com"},
-    {"Firstname": "Mary",  "Lastname": "Moe", "Email": "mary@example.com"},
-    {"Firstname": "July",  "Lastname": "Wooley", "Email": "july@example.com"}
-];
-
-var data2 = new DataEntity(field2, content)
-//
-
-//var caca = api("getAll", "test")
-
+let field = getFieldName(content), data: DataEntity
 
 export function getData() {
 
-    let data: Object
+    data = new DataEntity(field, content)
+
     //var request = axios.get(`${BASE_URL}getAll`)
     return (dispatch:any) => {
        // return request.then(
@@ -56,14 +24,13 @@ export function getData() {
        //   },
        //   err => dispatch(getDataFulfilledAction(data))
        // );
-        data = new DataEntity(field, sorotData)
         dispatch(getDataFulfilledAction(data))
      }
 
 }
 
-export function deleteData(idx: Number) {
-    let data = new DataEntity(field, content)
+export function deleteData(idx: Number, newContent: Object) {
+    data = new DataEntity(field, newContent)
     data.content.splice(idx, 1)
     return (dispatch:any) => {
         dispatch(getDataFulfilledAction(data))
@@ -71,35 +38,47 @@ export function deleteData(idx: Number) {
 }
 
 export function addData(newData: Object) {
-    let data = new DataEntity(field, content)
+    data = new DataEntity(field, content)
     return (dispatch:any) => {
         dispatch(getDataFulfilledAction(data))
     }
 }
 
 export function updateData(newData: Object) {
-    let data = new DataEntity(field, content)
+    data = new DataEntity(field, content)
     return (dispatch:any) => {
         dispatch(getDataFulfilledAction(data))
     }
 }
 
-export function sortData(fieldName: any) {
-    let newContent = _.sortBy(content, [fieldName]);
-    let data = new DataEntity(field, newContent)
-
-
+export function sortData(idx: any, asc: boolean) {
+    let rowName=  Object.keys(content[0]), newContent;
+    (asc)? newContent = _.orderBy(content, [rowName[idx]], 'asc'): newContent = _.orderBy(content, [rowName[idx]], 'desc');
+    data = new DataEntity(field, newContent);
     return (dispatch:any) => {
         dispatch(getDataFulfilledAction(data))
     }
 }
 
-export function searchData(value: any) {
-    let newContent = content.map((data:any, idx:number) => {
-        _.findLast(data, value);
-    })
-    let data = new DataEntity(field, newContent)
+export function searchData(value: any, content1: any) {
+    let newContent: any = [];
+    if(value === ""){
+        return (dispatch:any) => {
+            data = new DataEntity(field, content)
+            dispatch(getDataFulfilledAction(data))
+        }
+    }
+    _.find(content1, (data1:any) => {
+         _.toArray(data1).map((data2:any, idx:any) => {
+             if(_.isString(data2) === true){
+                 if(data2.toLowerCase().substring(0, value.length) === value.toLowerCase().substring(0, value.length)){
+                     newContent.push(data1)
+                 }
+            }
+        })
+    });
     return (dispatch:any) => {
+        data = new DataEntity(field, _.uniq(newContent))
         dispatch(getDataFulfilledAction(data))
     }
 }

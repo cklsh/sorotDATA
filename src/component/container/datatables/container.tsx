@@ -11,11 +11,11 @@ const mapStateToProps = (state:any) => {
 
 const mapDispatchToProps = (dispatch:any) => {
     return{
-        deleteData: (idx:Number) => dispatch(deleteData(idx)),
+        deleteData: (idx:Number, content: any) => dispatch(deleteData(idx, content)),
         addData: (newData:Object) => dispatch(addData(newData)),
         updateData: (data:Object) => dispatch(updateData(data)),
-        sortData: (data:Object) => dispatch(sortData(data)),
-        searchData: (data:Object) => dispatch(searchData(data)),
+        sortData: (idx: number, asc: boolean) => dispatch(sortData(idx, asc)),
+        searchData: (data:Object, content: any) => dispatch(searchData(data, content)),
     }
 }
 
