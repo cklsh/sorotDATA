@@ -1,0 +1,62 @@
+.sidebar
+    background-color: $sidebar-bg
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665)
+    padding-left: 10px
+    display: block
+    min-width: 235px
+    max-width: 235px
+    min-height: 100vh
+    top: 0
+    bottom: 0
+    position: absolute
+    left: 0
+    z-index: 99
+    margin: 0
+    color: $sidebar-item-color
+    .sidebar-item
+        font-size: 14px
+        padding: 14px
+        background-color: rgba($sidebar-item-bg, 0.2)
+        cursor: pointer
+        .icon
+            font-size: 24px
+            margin-right: 7px
+        &:hover
+            background-color: rgba($sidebar-item-bg-hv, 2)
+        .caret
+            float: right
+            margin-right: 8px
+    .child
+        color: $white-drk2
+        font-size: 14px
+        background-color: rgba($sidebar-item-bg-hv, 0.5)
+        padding: 8px 8px 8px 50px
+        &:hover
+            color: white
+    .header-item
+        padding: 5px 0 0 5px
+        background-color: rgba($sidebar-item-bg-hv, 0.5)
+        font-family: 'Teko', sans-serif
+        font-size: 12px
+        letter-spacing: 2px
+
+.sidebar.active
+    margin-left: -220px
+    transform: rotateY(100deg)
+
+@media (max-width: 768px)
+    .sidebar
+        margin-left: -220px
+    .sidebar.active
+        margin-left: 0
+//
+// @media only screen and (max-width: 640px)
+//   .sidenav
+//     width: 250px
+//   .top
+//     font-size: 14px
+// @media only screen and (max-width: 1024px) and (min-width: 728px)
+//   .sidenav
+//     width: 250px
+//   .top
+//     font-size: 20px
