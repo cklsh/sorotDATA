@@ -26,7 +26,6 @@ class Form extends React.Component<IForm, any> {
                 </div>
                 <div className="col-md-6"/>
             </div>
-
         )
     }
 }
