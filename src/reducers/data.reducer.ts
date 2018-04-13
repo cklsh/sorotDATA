@@ -1,4 +1,4 @@
-import DataEntity from '../api/dataEntity';
+import {DataEntity} from '../actions/_entity';
 
 export default (state: Object = {}, action: any) => {
   switch (action.type){

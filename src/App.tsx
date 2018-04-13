@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { getData } from './actions/data.action'
 import { getFormData } from './actions/form.action'
-import DataEntity from './api/dataEntity';
+import {DataEntity} from './actions/_entity';
 
 
 import Header from './component/layouts/header/index'
@@ -17,7 +17,6 @@ interface IApp{
     form: boolean;
     table: boolean;
     setData: () => void;
-    setForm: (value: boolean) => void;
 }
 
 
@@ -45,10 +44,9 @@ class App extends React.Component<IApp, any> {
 }
 
 const mapStateToProps = (state:any) => {
-    console.log("ccc", state.formReducer)
     return {
         data: state.dataReducer,
-        form: state.formReducer,
+        form: state.formReducer.value,
         table: true
     }
 }
@@ -56,7 +54,6 @@ const mapStateToProps = (state:any) => {
 const mapDispatchToProps = (dispatch:any) => {
     return{
         setData: () => dispatch(getData()),
-        setForm: (value: boolean) => dispatch(getFormData(value)),
     }
 }
 

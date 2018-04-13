@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import DataEntity from '../api/dataEntity';
+import {DataEntity, formEntity} from './_entity';
 import api from '../helpers/api'
 import {content} from '../helpers/sorot'
 import {getFieldName} from '../helpers/function'

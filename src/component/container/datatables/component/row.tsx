@@ -1,12 +1,15 @@
 import * as React from 'react'
 
+import {formEntity}from '../../../../actions/_entity';
+
+
 var _ = require('lodash/core')
 
 interface IRow {
     idx: number
     content: Array<Object>
-    formValue: boolean
-    setForm: (value: boolean) => void
+    showForm: formEntity
+    setForm: (value: boolean, idx: number) => void
     delete: (idx: Number, content: any) => void
 }
 
@@ -35,7 +38,7 @@ class Row extends React.Component<IRow, {}> {
     }
 
     showDetail(){
-        (this.props.formValue)? this.props.setForm(false): this.props.setForm(true)
+        (!this.props.showForm.value)? this.props.setForm(true, this.props.idx): null
     }
 
     render () {

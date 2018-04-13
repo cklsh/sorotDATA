@@ -8,7 +8,7 @@ import Datatable from './table';
 const mapStateToProps = (state:any) => {
     return {
         data: state.dataReducer,
-        formValue: state.formReducer
+        showForm: state.formReducer
     }
 }
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch:any) => {
         updateData: (data:Object) => dispatch(updateData(data)),
         sortData: (idx: number, asc: boolean) => dispatch(sortData(idx, asc)),
         searchData: (data:Object, content: any) => dispatch(searchData(data, content)),
-        setForm: (value: boolean) => dispatch(getFormData(value)),
+        setForm: (value: boolean, idx: number) => dispatch(getFormData(value, idx)),
 
     }
 }

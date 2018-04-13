@@ -1,4 +1,4 @@
-export default class DataEntity {
+export class DataEntity {
   field: Array<String>;
   content: any;
 
@@ -6,4 +6,9 @@ export default class DataEntity {
     this.field = field
     this.content = content
   }
+};
+
+export type formEntity = {
+  value: boolean;
+  idx: number;
 };

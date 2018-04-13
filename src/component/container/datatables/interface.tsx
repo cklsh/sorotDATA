@@ -4,8 +4,8 @@ export interface ITable {
     updateData? : (data: Object) => void;
     sortData : (data: any) => void;
     searchData : (data: any) => void;
-    setForm: (value: boolean) => void
-    formValue: boolean
+    setForm: (value: boolean, idx: number) => void
+    showForm: Object
     content: Array<Object>
     field: Array<String>
 }

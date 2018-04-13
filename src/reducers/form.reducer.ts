@@ -1,7 +1,9 @@
-export default (state: boolean = false, action: any) => {
+import {formEntity} from '../actions/_entity';
+
+export default (state: Object = {value:false, idx: 0}, action: any) => {
   switch (action.type){
     case 'FORM_ASSIGN':
-      return action.value;
+      return action.data;
     default:
       return state;
   }

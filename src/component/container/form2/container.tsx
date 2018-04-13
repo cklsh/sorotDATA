@@ -5,13 +5,13 @@ import Form from './form';
 
 const mapStateToProps = (state:any) => {
     return {
-        formValue: state.formReducer
+        showForm: state.formReducer
     }
 }
 
 const mapDispatchToProps = (dispatch:any) => {
     return{
-        setForm: (value: boolean) => dispatch(getFormData(value)),
+        setForm: (value: boolean, idx: number) => dispatch(getFormData(value, idx)),
     }
 }
 

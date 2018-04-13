@@ -1,11 +1,14 @@
-export function getFormData(value: boolean) {
+import {formEntity} from './_entity';
+
+export function getFormData(value: boolean, idx: number) {
     return (dispatch:any) => {
-        dispatch(getFormDataFulfilledAction(value))
+        dispatch(getFormDataFulfilledAction({value, idx}))
     }
 }
 
-function getFormDataFulfilledAction(value: boolean){
+function getFormDataFulfilledAction(data: formEntity){
+    console.log("cacacacaca", data)
     return {
-        type: 'FORM_ASSIGN', value
+        type: 'FORM_ASSIGN', data
     }
 }

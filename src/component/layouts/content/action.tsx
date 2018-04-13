@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import TableContainer from '../../container/datatables/container'
 import FormContainer from '../../container/form2/container'
-import DataEntity from '../../../api/dataEntity';
+import {DataEntity} from '../../../actions/_entity';
 import Sidebar from '../../layouts/sidebar/index'
 
 interface IAction{
@@ -19,7 +19,7 @@ class Action extends React.Component<IAction, any> {
             <div>
                 <Sidebar/>
                 {this.props.table && this.props.data && <div className="wrapper"><TableContainer {...this.props.data}/></div>}
-                {this.props.form && this.props.data && <div className="wrapper"><FormContainer/></div>}
+                {this.props.form && this.props.data && <div className="wrapper"><FormContainer {...this.props.data}/></div>}
             </div>
         )
     }
@@ -28,7 +28,7 @@ class Action extends React.Component<IAction, any> {
 const mapStateToProps = (state:any) => {
     return {
         data: state.dataReducer[0],
-        form: state.formReducer
+        form: state.formReducer.value
     }
 }
 

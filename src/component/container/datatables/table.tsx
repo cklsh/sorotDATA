@@ -8,15 +8,15 @@ var _ = require('lodash/core')
 
 interface IBody {
     content: Array<Object>
-    formValue: boolean
+    showForm: Object
     delete : (idx: any) => void
-    setForm : (value: boolean) => void
+    setForm : (value: boolean, idx: number) => void
 }
 
 const TBody: React.SFC<IBody> = (props:any) => {
     return (
         <tbody>
-            {props.content.map((data:string,idx:number) => ( (idx< 10) && <Row key={idx} idx={idx} content={props.content} delete={props.delete} setForm={props.setForm} formValue={props.formValue}/>))}
+            {props.content.map((data:string,idx:number) => ( (idx< 10) && <Row key={idx} idx={idx} content={props.content} delete={props.delete} setForm={props.setForm} showForm={props.showForm}/>))}
         </tbody>
     )
 }
@@ -37,7 +37,7 @@ class Datatable extends React.Component<ITable, {}> {
                             <td colSpan={2}><button className="btn btn-info addBtn ">insert data</button></td>
                         </tr>
                         <THead column={this.props.field} sort={this.props.sortData} search={this.props.searchData} content={this.props.content}/>
-                        <TBody content={this.props.content} delete={this.props.deleteData} setForm={this.props.setForm} formValue={this.props.formValue}/>
+                        <TBody content={this.props.content} delete={this.props.deleteData} setForm={this.props.setForm} showForm={this.props.showForm}/>
                     </table>
                 </div>
                 <div className="col-md-4"/>
