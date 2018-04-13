@@ -34,7 +34,6 @@ class THead extends React.Component<IHead, StateHead> {
 
     handleSearch(e:any){
         this.setState({value: e.target.value});
-        console.log("this", this.state.value)
         this.props.search(e.target.value, this.props.content)
     }
 

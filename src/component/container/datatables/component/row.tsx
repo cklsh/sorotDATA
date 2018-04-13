@@ -42,7 +42,7 @@ class Row extends React.Component<IRow, {}> {
         return (
             <tr key={this.props.idx}>
                 {Object.keys(this.props.content[this.props.idx]).map((value:string, idx2:number) => (<Field key={idx2} value={_.toArray(this.props.content[this.props.idx])[idx2]} idx={idx2}/>))}
-                <td><button className="btn btn-info" onClick={this.showDetail}>details</button></td>
+                <td><button className="btn btn-info" onClick={this.showDetail} data-toggle="modal" data-target="#exampleModalLong">details</button></td>
                 <td><button className="btn btn-danger" onClick={this.handleDelete} value={this.props.idx}>delete</button></td>
             </tr>
         )
