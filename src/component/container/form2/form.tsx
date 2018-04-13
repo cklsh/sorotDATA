@@ -21,23 +21,28 @@ class Form extends React.Component<IForm, any> {
 
     close(){
         this.props.setForm(false, 0)
-
-        //console.log("sadas", this.props)
     }
 
     render() {
         return(
-            <div className="modal">
-              <div className="modal-content">
-                <span className="close" onClick={this.close}>&times;</span>
-                <div className="form-group col-md-12">
-                    <div className="col-md-6">
-                        {this.formComponent(this.props.content[this.props.showForm.idx], this.props.showForm.idx)}
-                    </div>
-                    <div className="col-md-6"/>
+            <div className="modal bd-example-modal-lg">
+              <div className="modal-dialog modal-lg" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLongTitle">Detail Data</h5>
+                    <button type="button" className="close" onClick={this.close}>
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                    {this.formComponent(this.props.content[this.props.showForm.idx], this.props.showForm.idx)}
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-primary">Save changes</button>
+                  </div>
                 </div>
               </div>
-
             </div>
         )
     }

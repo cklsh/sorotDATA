@@ -28,7 +28,7 @@ class App extends React.Component<IApp, any> {
 
     render() {
         return (
-            <div>
+            <div> 
                 <Header/>
                 <Settings/>
                 <div className="row">

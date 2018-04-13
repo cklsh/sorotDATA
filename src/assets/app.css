@@ -6,28 +6,17 @@ body {
   color: #212121;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  overflow-y: hidden; }
 
 .wrapper {
   display: block;
   min-height: 100%;
-  padding-top: 10px; }
-
-.overlay {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  z-index: 98; }
+  padding: 10px; }
 
 .content {
   top: 50px;
   min-width: 100%;
-  padding-top: 5px;
-  padding-right: 40px;
   padding-left: 220px;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   position: relative;

@@ -38,7 +38,7 @@ class Row extends React.Component<IRow, {}> {
     }
 
     showDetail(){
-        (!this.props.showForm.value)? this.props.setForm(true, this.props.idx): null
+        (!this.props.showForm.value)? this.props.setForm(true, this.props.idx): this.props.setForm(false, this.props.idx)
     }
 
     render () {
