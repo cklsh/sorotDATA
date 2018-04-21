@@ -41,8 +41,8 @@ class THead extends React.Component<IHead, StateHead> {
         return (
             <thead>
                 <tr>
-                    {this.props.column.map((name:string, idx:number) => (<td key={idx} className="thead"><p><button className="sortBtn btn" onClick={this.handleSort} value={idx} >{name} <FaSort/></button></p></td>))}
-                    <td colSpan={2}><input defaultValue="search" className="form-control" onChange={this.handleSearch} value={this.state.value}/></td>
+                    {this.props.column.map((name:string, idx:number) => (<th key={idx} className="thead"><p><button className="sortBtn btn" onClick={this.handleSort} value={idx} >{name} <FaSort/></button></p></th>))}
+                    <th colSpan={2}><input defaultValue="search" className="form-control" onChange={this.handleSearch} value={this.state.value}/></th>
                 </tr>
             </thead>
 

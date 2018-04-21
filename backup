@@ -4,33 +4,24 @@ import {DataEntity, formEntity} from './_entity';
 import api from '../helpers/api'
 import {content} from '../helpers/sorot'
 import {getFieldName} from '../helpers/function'
-//
-//
-// var content:any = [
-//     {"Firstname": "John", "Lastname": "Doe", "Email": "john@example.com"},
-//     {"Firstname": "Mary",  "Lastname": "Moe", "Email": "mary@example.com"},
-//     {"Firstname": "July",  "Lastname": "Wooley", "Email": "july@example.com"}
-// ];
 
 var _ = require('lodash')
-const BASE_URL = "http://localhost:9090/"
-
-let field = getFieldName(content), data: DataEntity
+const BASE_URL = "http://localhost:9090/", data: DataEntity
 
 export function getData() {
-
+    let field = getFieldName(content)
     data = new DataEntity(field, content)
 
     //var request = axios.get(`${BASE_URL}getAll`)
     return (dispatch:any) => {
-       // return request.then(
-       //   response => {
-       //       var content= response.data
-       //       data = new DataEntity(field, sorotData)
-       //       dispatch(getDataFulfilledAction(data))
-       //   },
-       //   err => dispatch(getDataFulfilledAction(data))
-       // );
+       return request.then(
+         response => {
+             var content= response.data
+             data = new DataEntity(field, sorotData)
+             dispatch(getDataFulfilledAction(data))
+         },
+         err => dispatch(getDataFulfilledAction(data))
+       );
         dispatch(getDataFulfilledAction(data))
      }
 

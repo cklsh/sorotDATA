@@ -1,3 +1,4 @@
+//content: data dari API
 export function getFieldName(content: any){
 
     var rowName=  Object.keys(content[0])

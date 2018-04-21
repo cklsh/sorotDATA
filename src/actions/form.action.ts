@@ -7,7 +7,6 @@ export function getFormData(value: boolean, idx: number) {
 }
 
 function getFormDataFulfilledAction(data: formEntity){
-    console.log("cacacacaca", data)
     return {
         type: 'FORM_ASSIGN', data
     }

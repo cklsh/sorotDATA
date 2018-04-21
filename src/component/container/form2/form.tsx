@@ -12,7 +12,7 @@ class Form extends React.Component<IForm, any> {
 
     formComponent(content:any, idx:number){
         return(
-            <div key={idx}>
+            <div className="form-group" key={idx}>
                 {this.props.field.map((name:string, idx2:number) => (<p key={idx2}><label>{name}</label>: {<input type="text" className="form-control" defaultValue={_.toArray(content)[idx2]}/>}</p>))}
             </div>
         )
@@ -38,7 +38,7 @@ class Form extends React.Component<IForm, any> {
                     {this.formComponent(this.props.content[this.props.showForm.idx], this.props.showForm.idx)}
                   </div>
                   <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-secondary" onClick={this.close}>Close</button>
                     <button type="button" className="btn btn-primary">Save changes</button>
                   </div>
                 </div>
