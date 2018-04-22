@@ -1,20 +1,20 @@
 import { connect } from 'react-redux';
+import { getFormData } from '../../../actions/form.action'
+
 import Form from './form';
 
-// const mapStateToProps = (state) => {
-//     return {
-//       members: state.members,
-//       repos: state.repos
-//     }
-// }
-//
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     loadMembers: () => { return dispatch(loadMembers()) },
-//     loadRepos: () => { return dispatch(loadRepos()) }
-//   }
-// }
+const mapStateToProps = (state:any) => {
+    return {
+        showForm: state.formReducer
+    }
+}
 
-const FormContainer = Form
+const mapDispatchToProps = (dispatch:any) => {
+    return{
+        setForm: (value: boolean, idx: number) => dispatch(getFormData(value, idx)),
+    }
+}
+
+const FormContainer = connect(mapStateToProps, mapDispatchToProps)(Form)
 
 export default FormContainer;

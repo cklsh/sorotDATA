@@ -1,29 +1,13 @@
 import * as React from 'react'
 
-import Row from './component/row'
 import THead from './component/head'
+import {TBody} from './component/body'
+
 import {ITable} from './interface'
 
 var _ = require('lodash/core')
 
-interface IBody {
-    entries: number
-    content: Array<Object>
-    showForm: Object
-    delete : (idx: any) => void
-    setForm : (value: boolean, idx: number) => void
-}
-
 type StateTable = { entries: number };
-
-const TBody: React.SFC<IBody> = (props:any) => {
-    return (
-        <tbody>
-            {props.content.map((data:string,idx:number) => ( (idx< props.entries) && <Row key={idx} idx={idx} content={props.content} delete={props.delete} setForm={props.setForm} showForm={props.showForm}/>))}
-        </tbody>
-    )
-}
-
 
 class Datatable extends React.Component<ITable, StateTable> {
 

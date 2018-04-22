@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux'
 
 import TableContainer from '../../container/datatables/container'
-import FormContainer from '../../container/form2/container'
+import FormContainer from '../../container/form/container'
 import {DataEntity} from '../../../actions/_entity';
 import Sidebar from '../../layouts/sidebar/index'
 

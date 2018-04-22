@@ -20,17 +20,7 @@ let field = getFieldName(content), data: DataEntity
 export function getData() {
 
     data = new DataEntity(field, content)
-
-    //var request = axios.get(`${BASE_URL}getAll`)
     return (dispatch:any) => {
-       // return request.then(
-       //   response => {
-       //       var content= response.data
-       //       data = new DataEntity(field, sorotData)
-       //       dispatch(getDataFulfilledAction(data))
-       //   },
-       //   err => dispatch(getDataFulfilledAction(data))
-       // );
         dispatch(getDataFulfilledAction(data))
      }
 
