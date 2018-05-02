@@ -7,7 +7,7 @@ export default (url: String, body: any = {}) => {
   const config = { headers: { 'cache-control': 'no-cache' } };
 
   return axios.get(baseUrl + url)
-  .then(function (response) {
+  .then((response) => {
      return response.data
   })
   .catch(function (error) {

@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "@typed/compose": "^1.0.0",
+    "@types/fusioncharts": "^3.11.5",
     "@types/googlemaps": "^3.30.7",
     "@types/jquery": "^3.3.0",
     "@types/lodash": "^4.14.105",
     "@types/markerclustererplus": "^2.1.33",
     "@types/node": "7.0.7",
+    "@types/plotly.js": "^1.36.0",
     "@types/react-icons": "^2.2.5",
     "@types/react-redux": "^5.0.15",
     "@types/react-sidebar": "^2.2.3",
@@ -21,14 +23,17 @@
     "lodash": "^4.17.5",
     "node-sass": "^4.7.2",
     "node-sass-chokidar": "0.0.3",
+    "plotly.js": "^1.36.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
+    "react-plotlyjs-ts": "^2.0.0",
     "react-redux": "^5.0.7",
     "react-scripts-ts": "2.13.0",
     "redux": "^3.7.2",
     "sweetalert2": "^7.13.3",
-    "ts-loader": "^4.1.0"
+    "ts-loader": "^4.1.0",
+    "typescript": "^2.8.3"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src/assets/sass/index.sass --include-path ./node_modules src/assets/sass/index.sass -o src/assets/",

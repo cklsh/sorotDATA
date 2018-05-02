@@ -9,14 +9,16 @@ import {DataEntity} from './actions/_entity';
 import Header from './component/layouts/header/index'
 import Settings from './component/layouts/header/settings'
 import Action from './component/layouts/content/action'
-
 import './assets/index.css'
 import 'bootstrap/dist/css/bootstrap.css'
+
 
 interface IApp{
     form: boolean;
     table: boolean;
     setData: () => void;
+    data?: any;
+    layout?: any;
 }
 
 
@@ -24,11 +26,13 @@ class App extends React.Component<IApp, any> {
     constructor(props:any){
         super(props)
         this.props.setData()
+
     }
+
 
     render() {
         return (
-            <div> 
+            <div>
                 <Header/>
                 <Settings/>
                 <div className="row">

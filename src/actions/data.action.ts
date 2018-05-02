@@ -4,8 +4,7 @@ import {DataEntity, formEntity} from './_entity';
 import api from '../helpers/api'
 import {content} from '../helpers/sorot'
 import {getFieldName} from '../helpers/function'
-//
-//
+
 // var content:any = [
 //     {"Firstname": "John", "Lastname": "Doe", "Email": "john@example.com"},
 //     {"Firstname": "Mary",  "Lastname": "Moe", "Email": "mary@example.com"},

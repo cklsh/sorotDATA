@@ -37,7 +37,7 @@ class Header extends React.Component<any, any> {
             <div>
                 <div className="row header">
                     <div className="col-8 col-md-4 header-logo">
-                      LOGO<GoThreeBars className="icon" onClick={this.navbarDisplay()}/>
+                      DATA<GoThreeBars className="icon" onClick={this.navbarDisplay()}/>
                     </div>
                     <div className="col-4 col-md-6"/>
                 </div>

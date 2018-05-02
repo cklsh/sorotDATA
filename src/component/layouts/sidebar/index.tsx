@@ -22,24 +22,29 @@ class Sidebar extends React.Component<any, any> {
         return (
             <aside className="sidebar" id="sidebar">
                 <div className="header-item">DATA</div>
-                <div className="sidebar-item"  onClick={this.showChild}><GoBook className="icon"/> Datatables <GoChevronDown className="caret"/>
+                <div className="sidebar-item"  onClick={this.showChild}><GoBook className="icon"/> Datatables
                 </div>
                 {this.state.child1 && <div className="child">item child</div>}
-                <div className="sidebar-item"><TiChartArea className="icon"/> Graph <GoChevronDown className="caret"/></div>
-                <div className="sidebar-item"><TiChartArea className="icon"/> sidebar item 3 <GoChevronDown className="caret"/></div>
-                <div className="sidebar-item">sidebar item 4</div>
-                <div className="sidebar-item">sidebar item 5</div>
-
-                <div className="header-item">DATA2</div>
-                <div className="sidebar-item">sidebar item 1</div>
-                <div className="sidebar-item">sidebar item 2</div>
-                <div className="sidebar-item">sidebar item 3</div>
-                <div className="sidebar-item">sidebar item 4</div>
-                <div className="sidebar-item">sidebar item 5</div>
-
+                <div className="sidebar-item"><TiChartArea className="icon"/> Graph </div>
             </aside>
         )
     }
 }
+//
+// <div className="header-item">DATA</div>
+// <div className="sidebar-item"  onClick={this.showChild}><GoBook className="icon"/> Datatables <GoChevronDown className="caret"/>
+// </div>
+// {this.state.child1 && <div className="child">item child</div>}
+// <div className="sidebar-item"><TiChartArea className="icon"/> Graph <GoChevronDown className="caret"/></div>
+// <div className="sidebar-item"><TiChartArea className="icon"/> sidebar item 3 <GoChevronDown className="caret"/></div>
+// <div className="sidebar-item">sidebar item 4</div>
+// <div className="sidebar-item">sidebar item 5</div>
+//
+// <div className="header-item">DATA2</div>
+// <div className="sidebar-item">sidebar item 1</div>
+// <div className="sidebar-item">sidebar item 2</div>
+// <div className="sidebar-item">sidebar item 3</div>
+// <div className="sidebar-item">sidebar item 4</div>
+// <div className="sidebar-item">sidebar item 5</div>
 
 export default Sidebar

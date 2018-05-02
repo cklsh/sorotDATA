@@ -2,7 +2,7 @@ const axios = require('axios')
 
 
 export default (url:any, body:any = {}) => {
-  const baseUrl = "test"
+  const baseUrl = "http://localhost:9090/getByCategory/Umum"
 
   const config = { headers: { 'cache-control': 'no-cache' } };
 
