@@ -3,18 +3,19 @@ import * as React from 'react'
 import THead from './component/head'
 import {TBody} from './component/body'
 
+import {FieldEntity} from '../../../actions/_entity'
+
 import {ITable} from './interface'
 
 var _ = require('lodash/core')
 
 type StateTable = { entries: number };
-
 class Datatable extends React.Component<ITable, StateTable> {
 
     constructor(props: any){
         super(props);
         this.state={
-            entries: 8
+            entries: 8,
         }
         this.changeEntries = this.changeEntries.bind(this)
     }
@@ -22,9 +23,9 @@ class Datatable extends React.Component<ITable, StateTable> {
     changeEntries(e:any){
         this.setState({entries: e.target.value})
     }
+
+
     render () {
-        console.log("FIELD", this.props.field)
-        console.log("CONTENT", this.props.content)
         return (
             <div className="col-md-12 overflow-table">
                 <div className="col-md-8">
@@ -37,11 +38,11 @@ class Datatable extends React.Component<ITable, StateTable> {
                 </form>
                     <table className="table table-striped table-hover table-bordered">
                         <tr>
-                            {this.props.field.map((data:string, idx:number) => (<td key={idx}><input className="form-control" defaultValue="" disabled={true}/></td>))}
+                            {this.props.field.map((data:FieldEntity, idx:number) => (<td key={idx}><input className="form-control" defaultValue="" disabled={true}/></td>))}
                             <td colSpan={2}><button className="btn btn-info addBtn">insert data</button></td>
                         </tr>
                         <THead column={this.props.field} sort={this.props.sortData} search={this.props.searchData} content={this.props.content}/>
-                        <TBody entries={this.state.entries} content={this.props.content} delete={this.props.deleteData} setForm={this.props.setForm} showForm={this.props.showForm}/>
+                        <TBody entries={this.state.entries} content={this.props.content} column={this.props.field} delete={this.props.deleteData} setForm={this.props.setForm} showForm={this.props.showForm}/>
                     </table>
                 </div>
                 <div className="col-md-4"/>

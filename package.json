@@ -11,6 +11,7 @@
     "@types/markerclustererplus": "^2.1.33",
     "@types/node": "7.0.7",
     "@types/plotly.js": "^1.36.0",
+    "@types/react-dom": "^16.0.5",
     "@types/react-icons": "^2.2.5",
     "@types/react-redux": "^5.0.15",
     "@types/react-sidebar": "^2.2.3",

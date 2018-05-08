@@ -1,3 +1,5 @@
+import {FieldEntity} from '../../../actions/_entity'
+
 export interface ITable {
     deleteData : (idx: Number) => void;
     addData? : (data: Object) => void;
@@ -7,5 +9,5 @@ export interface ITable {
     setForm: (value: boolean, idx: number) => void
     showForm: Object
     content: Array<Object>
-    field: Array<String>
+    field: Array<FieldEntity>
 }

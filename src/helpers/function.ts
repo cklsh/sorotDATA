@@ -7,4 +7,3 @@ export function getFieldName(content: any){
         field[i] = rowName[i].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ").toUpperCase()
     }
     return field
-}

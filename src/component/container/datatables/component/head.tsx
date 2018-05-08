@@ -1,9 +1,11 @@
 import * as React from 'react'
 
+import {FieldEntity} from '../../../../actions/_entity'
+
 import FaSort = require('react-icons/lib/fa/sort')
 
 interface IHead {
-    column: Array<String>;
+    column: Array<FieldEntity>;
     content: any
     sort: (idx: number, asc:boolean) => void;
     search: (data: any, content: any) => void;
@@ -41,7 +43,7 @@ class THead extends React.Component<IHead, StateHead> {
         return (
             <thead>
                 <tr>
-                    {this.props.column.map((name:string, idx:number) => (<th key={idx} className="thead"><button className="sortBtn btn" onClick={this.handleSort} value={idx} ><p>{name} <FaSort/></p></button></th>))}
+                    {this.props.column.map((column:any, idx:number) => (<th key={idx} className="thead"><button className="sortBtn btn" onClick={this.handleSort} value={idx} ><p>{column.viewName} <FaSort/></p></button></th>))}
                     <th colSpan={2}><input defaultValue="search" className="form-control" onChange={this.handleSearch} value={this.state.value}/></th>
                 </tr>
             </thead>

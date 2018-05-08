@@ -1,12 +1,19 @@
 export class DataEntity {
-  field: Array<String>;
-  content: any;
+  field: Array<FieldEntity>;
+  content: Array<Object>;
 
   constructor(field:any, content:any){
     this.field = field
     this.content = content
   }
 };
+
+var field1: any = {
+    objectName: "Firstname",
+    viewName: "Nama Depan",
+    searchable: true,
+    formElement: "input"
+}
 
 export class FieldEntity {
   objectName: string;
