@@ -14,7 +14,7 @@ const mapStateToProps = (state:any) => {
 
 const mapDispatchToProps = (dispatch:any) => {
     return{
-        deleteData: (idx:Number, content: any) => dispatch(deleteData(idx, content)),
+        deleteData: (idx:number, content: any) => dispatch(deleteData(idx, content)),
         addData: (newData:Object) => dispatch(addData(newData)),
         updateData: (data:Object) => dispatch(updateData(data)),
         sortData: (idx: number, asc: boolean) => dispatch(sortData(idx, asc)),

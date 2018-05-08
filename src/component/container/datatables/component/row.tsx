@@ -12,7 +12,7 @@ interface IRow {
     content: Array<Object>
     showForm: formEntity
     setForm: (value: boolean, idx: number) => void
-    delete: (idx: Number, content: any) => void
+    delete: (idx: number, content: any) => void
 }
 
 interface IField {
@@ -36,7 +36,7 @@ class Row extends React.Component<IRow, {}> {
     }
 
     handleDelete(e:any){
-        let idx: Number = e.target.value;
+        let idx: number = e.target.value;
         this.props.delete(idx, this.props.content);
     }
 

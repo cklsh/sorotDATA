@@ -9,7 +9,7 @@ interface IBody {
     content: Array<Object>
     column: Array<FieldEntity>;
     showForm: Object
-    delete : (idx: any) => void
+    delete : (idx: number) => void
     setForm : (value: boolean, idx: number) => void
 }
 

@@ -30,7 +30,7 @@ const field4: FieldEntity = {
 
 export const field: Array<FieldEntity> = [field1, field2, field3, field4]
 
-export const content:Object = [
+export const content:Array<Object> = [
     {"Firstname": "John", "Lastname": "Doe", "Email": "john@example.com", "Age": "20", "Gender": "Pria"},
     {"Firstname": "Mary",  "Lastname": "Moe", "Email": "mary@example.com", "Age": "32", "Gender": "Wanita"},
     {"Firstname": "July",  "Lastname": "Wooley", "Email": "july@example.com", "Age": "23", "Gender": "Wanita"}
