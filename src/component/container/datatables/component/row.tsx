@@ -50,7 +50,7 @@ class Row extends React.Component<IRow, {}> {
                     return(<Field key={idx2} value={value} idx={idx2}/>)
             }
         }
-        return(<div/>)
+        return(null)
 
     }
 

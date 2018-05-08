@@ -1,33 +1,18 @@
 import axios from 'axios'
 
-import {DataEntity, formEntity} from './_entity';
-import api from '../helpers/api'
-//mport {content} from '../helpers/sorot'
+import {DataEntity, FieldEntity, formEntity} from './_entity';
+import {content, field} from './_.data';
+//import api from '../helpers/api'
+//import {content} from '../helpers/sorot'
 
-var _ = require('lodash')
-const BASE_URL = "http://localhost:9090/"
-var content:any = [
-    {"Firstname": "John", "Lastname": "Doe", "Email": "john@example.com"},
-    {"Firstname": "Mary",  "Lastname": "Moe", "Email": "mary@example.com"},
-    {"Firstname": "July",  "Lastname": "Wooley", "Email": "july@example.com"}
-];
-
-let data: DataEntity
-
-var field1: any = {
-    objectName: "Firstname",
-    viewName: "Nama Depan",
-    searchable: true,
-    formElement: "input"
-}
+let _ = require('lodash'), data: DataEntity
 
 export function getData() {
 
-    data = new DataEntity([field1], content)
+    data = new DataEntity(field, content)
     return (dispatch:any) => {
         dispatch(getDataFulfilledAction(data))
      }
-
 }
 
 export function deleteData(idx: Number, newContent: Object) {

@@ -8,13 +8,6 @@ export class DataEntity {
   }
 };
 
-var field1: any = {
-    objectName: "Firstname",
-    viewName: "Nama Depan",
-    searchable: true,
-    formElement: "input"
-}
-
 export class FieldEntity {
   objectName: string;
   viewName: string;
