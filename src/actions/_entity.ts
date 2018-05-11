@@ -12,9 +12,9 @@ export class FieldEntity {
   objectName: string;
   viewName: string;
   searchable: boolean;
-  formElement: string; // nanti diganti
+  formElement: any;
 
-  constructor(objectName: string, viewName: string, searchable: boolean, formElement: string){
+  constructor(objectName: string, viewName: string, searchable: boolean, formElement: any){
       this.objectName = objectName
       this.viewName = viewName
       this.searchable = searchable
@@ -26,3 +26,7 @@ export type formEntity = {
   value: boolean;
   idx: number;
 };
+
+export type formElement = {
+    type: string;
+}
